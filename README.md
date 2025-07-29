@@ -3,6 +3,18 @@
 ## Overview
 
 This project focuses on valuing a historical portfolio of non-performing personal loans from Prosper, utilizing a segmented Discounted Cash Flow (DCF) model. The core of the project involves robust SQL-based data preparation, cleaning, feature engineering, and a granular segmentation strategy to feed into the valuation model.
+## Table of Contents
+- [Overview](#overview)
+- [Project Goal](#project-goal)
+- [Key Guiding Decisions & Parameters](#key-guiding-decisions--parameters)
+- [Database Schema](#database-schema-debt_portfolio)
+- [Important Notes on Data Handling & Current State](#important-notes-on-data-handling--current-state)
+- [Project Phases & SQL Scripts](#project-phases--sql-scripts)
+- [How to Run & Interpret the Project](#how-to-run--interpret-the-project)
+- [Repository Structure](#repository-structure)
+- [Additional Documentation](#additional-documentation)
+- [Contact](#contact)
+
 
 ## Project Goal
 
@@ -77,8 +89,17 @@ To set up and run this project:
 6.  **DCF Model Input Generation:** Execute `08_dcf_model_export_data.sql` to generate the data needed for your DCF model. This script outputs data that should be imported into the 'Model\_Parameters' and 'Segment\_Monthly\_Gross\_Recoveries' sheets of your DCF spreadsheet (e.g., `Project_Discounted Cash Flow Base.xlsx`).
 7.  **DCF Model Review:** The `Project_Discounted Cash Flow Base.xlsx - DCF_Model.csv` file directly reflects the calculated Discount Factors, Gross Recoveries, Collection Costs, Net Cash Flow, and the final Segment-level and Total Portfolio NPVs. Review this file to understand the monthly cash flow projections and the ultimate valuation.
 8.  **Sensitivity Analysis Review:** The `Project_Discounted Cash Flow Base.xlsx - Sensitivity_Analysis.csv` file contains the results of the sensitivity analysis, which can be used to understand how changes in key assumptions (recovery rates, discount rates, collection costs) impact the portfolio's NPV.
+## Repository Structure
 
-The `Prosper Loan Portfolio Valuation_ Project Overview & Comprehensive Plan.docx` document provides a more comprehensive, granular roadmap and detailed project documentation.
+- `Data/`: CSV exports of model parameters and recovery curves used by the DCF model.
+- `SQL Scripts/`: SQL files that build and populate the PostgreSQL database.
+- `Discounted Cash Flow/`: Excel workbook containing the valuation model.
+- `Documents/`: Project plan and final report.
+
+## Additional Documentation
+
+The `Prosper Loan Portfolio Valuation_ Project Overview & Comprehensive Plan.docx` document provides a more comprehensive roadmap and project narrative.
+
 
 ## Contact
 
